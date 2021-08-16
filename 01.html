@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="modal-content" overlaydialogboundary="" role="document" style="display:block">
+		<ng-component _nghost-c17=""><div _ngcontent-c17="" class="modal-header">
+			<button _ngcontent-c17="" class="close" type="button">
+				<span _ngcontent-c17="">×</span>
+			</button>
+			<h3 _ngcontent-c17="" class="modal-title">Getting Started with Git</h3>
+		</div>
+
+		<div _ngcontent-c17="" class="modal-body">
+			<block-document _ngcontent-c17="" _nghost-c9="">
+				<p _ngcontent-c9="" concept-tooltip="">Often, as a data scientist or data analyst, you will be collaborating with multiple people on the same project: you get assigned one part, a colleague gets assigned another part, and so on. Imagine that you were working on this project locally, and you uploaded the folder to a centralized location regularly. If you aren't very careful, it would be easy for someone making changes to their section of the project to overwrite changes someone else had made when this centralized file was updated.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Version control systems solve this problem. These systems will "merge" changes together intelligently, enabling multiple developers to work on a project at the same time. While there are few distributed version control systems, including Mercurial, Bazzar, and Git, Git is by far the most popular.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">In this mission, you start learning and using Git. Git is a command-line tool we can access by typing git in the shell. The first step in using Git is to initialize a folder as a repository, which tracks multiple versions of the files in the folder, enabling collaboration.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">If you have heard of or used GitHub regularly, Github provides hosting for software development version control software using Git. Since GitHub uses Git, Git is paramount to learning as a data scientist. Not only will it assist you in a work setting, but it'll aid you as you build a portfolio and establish your online presence.</p>
+
+
+
+				
+				<h4 _ngcontent-c9="">Installing Git</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Before you start using Git, you have to make it available on your computer. Even if it’s already installed, it’s probably a good idea to update to the latest version.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Click on this link&nbsp; <a href="https://github.com/git-guides/install-git" target="_blank">Git Guides - install git · GitHub</a>&nbsp; to find the documentation on installing git on windows, MacOS, Linux. Download and install git by following the instructions diligently.</p>
+
+
+
+				
+				<h4 _ngcontent-c9="">Creating a Git account</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">To begin to use git, you need to create a github account. If you already have a github account, feel free to skip this. To create a github account you need a unique username, email, and a password.&nbsp; The username and password would be needed in subsequent sign in, so try not to lose them. Click the link below to create a new account.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip=""><a href="https://github.com/join" target="_blank">Join GitHub · GitHub</a>&nbsp;</p>
+
+
+
+				
+				<h4 _ngcontent-c9="">Setting up Git</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Before you launch Git, you need a little bit of setup first. You will probably do this only once since all the setup is stored on an external global file, meaning that all your projects will share the same configs. There is also a way to configure projects one by one, but we will consider this later.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Since Git is a distributed Version Control System, you will one day need to connect to other remote repositories. To avoid making any identity mistake, it is necessary to tell Git a bit about yourself. Don’t worry; it won’t ask a fun fact about you!</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">To set up Git, open “git bash" (for Windows systems) or the default console window (for Linux/MacOS or Windows systems that modified their PATH environment). In the command prompt, just tell Git your name and email address:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">For windows just search and open “git bash" When you open “git bash", you should get something that looks like&nbsp; the image below.&nbsp;</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/87121391fee1dc01f000" alt="Figure 1: Git bash">
+					<figcaption _ngcontent-c9="">Figure 1: Git bash</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">Type the following code to set your username and email. Notice I used my username and email, you should change it to your own username and email.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;git config --global user.name "Zalihat"</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;git config global user.email "<a href="mailto:zalihatmohammad25@gmail.com" target="_blank">zalihatmohammad25@gmail.com</a>”</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Notice the “global” argument; it means that the setup is for all future Git repositories,</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">so you don’t have to set this up again in the future.</p>
+
+
+
+				
+				<h4 _ngcontent-c9="">Repositories</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">We will look at Github repositories, usually called “Git Repo.”</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">A repository is a storage where all your project and all the changes made to it are kept.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">You can think of it as a “change database.” This is no cause for worry; it is only a typical folder on your system, it is therefore very easy to manipulate.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">For each project you want to manage with Git, you have to set up a repository for it.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Setting up a repository is very easy. Just navigate to the folder you want to track, and tell</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Git to initiate a repository there.&nbsp;</p>
+
+
+
+
+				
+				<ol _ngcontent-c9="">
+					<li _ngcontent-c9="">Create a folder</li><li _ngcontent-c9="">Navigate to the folder.</li><li _ngcontent-c9="">initialize the folder as a git repository.&nbsp; You do this by right clicking on the empty space inside the folder and then selecting "git bash". This action will open "git bash". Run the command below to initialize an empty repository.</li>
+				</ol>
+
+				<p _ngcontent-c9="" concept-tooltip="">Git init</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">This will create a hidden folder git, to see this hidden folder on "windows" you go to “view” on the folder and check the hidden items, as shown below. </p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/5e411391ff5a2e41f000" alt="Figure 2: show hidden files">
+					<figcaption _ngcontent-c9="">Figure 2: show hidden files</figcaption>
+				</figure>
+
+				
+				<h4 _ngcontent-c9="">Working Directory</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">What about the empty area outside the “.git” directory? It is called the Working Directory, and the files you will be working on will be stored there. Generally, your most recent version will be on the Working Directory. Each file you work on is in the Working Directory. There is nothing particular about this place, except the fact that you will only manipulate the files here directly. Never modify the files inside the “.git” directory!</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Git will detect any new file you will place in the Working Directory. You can also check the status of the directory by using the Git command “status.”</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip=""><b>git status</b></p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Lets create a simple text file and name it “test.txt”, you can create this file using any text editor. save and exit.&nbsp;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Go back to "git bash" and run the "git status" command. Notice the change, that is because git noticed that the project has changed. Make sure that you place your new file alongside the .git directory like in figure below, not into it!</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/3a4c1391ffc0a681f000" alt="Figure 3: working directory">
+					<figcaption _ngcontent-c9="">Figure 3: working directory</figcaption>
+				</figure>
+
+				
+				<h4 _ngcontent-c9="">Staging Area</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">The Staging Area is where your files go before the snapshots are taken. Not every file you modified on the Working Directory should be taken into account when taking a snapshot of the&nbsp; current state of the project. Only the files placed in the Staging Area will be snapshotted. Hence, before taking a snapshot of the project, you select which changed files to take account of. A change in a file can be creating, deleting, or editing. Think of it as designating which files get to be in the family photo. To add a file to the "Staging Area", we use the Git command “add.”	</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">For example when we added the “test.txt” file and ran the "git status command", we&nbsp; noticed this message;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Untracked files:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;&nbsp;(use "git add &lt;file&gt;..." to include in what will be committed)</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;&nbsp;&nbsp;&nbsp;	Test.txt.txt</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">This is telling you that you need to add the file you just created to the staging area so it can be tracked. Therefore, to add the file we go to the "git bash" and run the following command:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">git add test.txt</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">This will add the “test.txt” file to the staging area, or if you created multiple files, you can add them one after another or together like “git add file1 file2 file3.” Also, if you want to track all the files added, you can run the command</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">git add .</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Let’s check the status with git status command.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">git status</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Adding a file to the staging area won’t produce any visible result, but checking the status will get you a result similar to this:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">On branch master</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">No commits yet</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Changes to be committed:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;&nbsp;(use "git rm --cached &lt;file&gt;..." to unstage)</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;&nbsp;&nbsp;&nbsp;	new file: &nbsp; test.txt</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip=""><b>Unstaging a file</b></p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Say for example you made a mistake while staging the file, and you want to undo it, all you need to do is unstage the file.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Here is the command to unstage a file</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;git rm --cached test.txt</p>
+
+
+
+				
+				<h4 _ngcontent-c9="">Commits</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Like we talked about in the section before this one, a commit is just a snapshot of the entire project at a certain time. Git doesn’t record the individual changes done to the files, it takes a picture of the entire project. In addition to the snapshot, a commit also contains information about the “author” of the content, and the “committer” or whoever put the changeset into the repository.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">A commit is identified by its name; a 40-character string that is obtained by hashing the commit. It is a simple “SHA1” hash so multiple commits with the same information will have the same name.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">A reference to a specific commit is called “head,” and it also has a name. Also, the head you are currently working on is called “HEAD”. We can now commit the files we staged earlier. Before each commit, you should check the status of the Working Directory and the Staging Area. If all the files you want to commit are in the Staging Area (under the phrase “Changes to be committed”), you can commit. If not, you have to stage them with “git add.”&nbsp;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">To commit all the changes we made, we use “git commit.” This will take a snapshot of our current state of the project.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">git commit -m&nbsp; “initial commit”</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">The command above will commit the changes made. Note that the “initial commit” is your commit message which could be anything. However, for the example, I used an initial commit because I want git and anybody that will access the repo to know that this is the initial commit.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">The rule is to always use messages that are related to the changes made. For example, if I fixed a typo in the document, the commit message can be something like&nbsp; “Fixed typo in test.txt”&nbsp;</p>
+
+
+
+				
+				<h4 _ngcontent-c9="">Git Ignore</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Not everything in the working directory should be tracked by Git. There are certain files (configs, passwords, bad code) that are generally left untracked by authors or developers. Those files (or directories) are listed in a simple file called “.gitignore.” Notice the period before “gitignore”; it’s important. To ignore files, create a file named .gitignore and list the files or folders to ignore in it.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Let’s get back to our repository. Imagine that you want to include a private, untracked file named Private.txt. You first have to create the .gitignore file using your favorite text editor and then write Private.txt.&nbsp;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">How to create a .gitignore file on windows</p>
+
+
+
+
+				
+				<ol _ngcontent-c9="">
+					<li _ngcontent-c9="">Open notepad or notepad++ or any text editor available.</li><li _ngcontent-c9="">Type in the name of the file you want git to ignore e.g Private.txt.</li><li _ngcontent-c9="">Save file as; filename : .gitignore, save as type: all text</li>
+				</ol>
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/912113920df16101f000" alt="Figure 4: saving&amp;nbsp; gitignore file">
+					<figcaption _ngcontent-c9="">Figure 4: saving&nbsp; gitignore file</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">After saving the file, let's open the "git bash" to check the status. Note that if you want to open "git bash", click on the empty space on the folder. Once inside the folder, select "git bash" here.</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/f57013920e1fdb81f000" alt="">
+					
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">As you can see on the status shown in image above, Private.txt is not tracked. You can also see that the .gitignore file is tracked; you will therefore have to add and commit it after you modify it. We simply use the git add and git commands,&nbsp;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">git add .gitignore</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">git commit -m "Added gitignore"</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;As always, staging a file and then committing the project will result in a confirmation message summarizing the changes done.&nbsp;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">[master a7c3285] Added gitignore</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;1 file changed, 1 insertion(+)</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">&nbsp;create mode 100644 .gitignore</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Remember that the “.gitignore” global file should be placed at the root of your repository. If you put it in a directory, only the matching files in that directory will be ignored. Generally, having multiple “.gitignore” files in multiple directories is considered as a bad move unless your project is enormous. Prefer listing them into a single .gitignore file placed at the root of your repository. The .gitignore file doesn’t only ignore files listed by name; you can also ignore directories and files matching a description. You will find in theTable below, a handy reminder of all the templates you can use.&nbsp;</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/dade13920e4e9a81f000" alt="Figure 6: git ignore lines">
+					<figcaption _ngcontent-c9="">Figure 6: git ignore lines</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">That’s how you ignore files! It’s almost as easy as ignoring your responsibilities!</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Notwithstanding, remember: the .gitignore file is tracked and versioned, so don’t forget to stage it before committing!</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Let's look at another example:&nbsp;</p>
+
+
+
+
+				
+				<ol _ngcontent-c9="">
+					<li _ngcontent-c9="">create a folder and name it Build.</li><li _ngcontent-c9="">Add Build to the gitignore file.</li><li _ngcontent-c9="">Git status to check the status, make sure the build folder is not tracked</li><li _ngcontent-c9="">Git add .gitignore commit</li><li _ngcontent-c9="">Check status</li>
+				</ol>
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/378a13920e6c0101f000" alt="Figure 7: using the git ignore command.">
+					<figcaption _ngcontent-c9="">Figure 7: using the git ignore command.</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">Exercise:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Take your repository from the previous exercise and create multiple files and directories. Check Table 4-1 and try to ignore the files that you created using each line. Create as many files as you need, and don’t stop until you understand each pattern. No need to remember everything, but you should at least have an idea of when they should be used.</p>
+
+
+
+				
+				<h4 _ngcontent-c9="">Checking logs and history</h4>
+
+
+				<p _ngcontent-c9="" concept-tooltip="">If you followed the exercises (as you should) or began to use Git for your own projects, you now have a little problem (that I promised would be solved easily with Git); how to&nbsp; consult the history log. This is one of the most used features of Git and also one of the easiest Git commands:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">git log</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Try it! Open "git bash" and run the command. You should get a view like the one shown below</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/8cf213920eaf1341f000" alt="Figure 8:&amp;nbsp; git log">
+					<figcaption _ngcontent-c9="">Figure 8:&nbsp; git log</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">The commit log will list (from the most recent to the oldest) all the snapshots you or other people committed. It also includes, for each commit</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• The name (unique, obtained by hash)</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• The author</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• The date</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• The description</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Since the commit names are too long, we will only use the first five letters as the</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">name. This will be important for the next section.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">If your commit history is very long, you can use the keyboard and go</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• Forward or backward one line: key up and down OR j and k</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• Forward or backward one window: f and b</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• At the end of the log: G</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">There are many parameters you can use with git log; The table below is presenting them to you.</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/c3a513920ed0a7c1f000" alt="Figure 9: git log commands">
+					<figcaption _ngcontent-c9="">Figure 9: git log commands</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">Exercise:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">This exercise is very simple. Just reopen your repository from the last exercise and check the</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">history log:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• In reverse order</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• From yesterday</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• For the last two commits</p>
+
+
+
+				<h3 _ngcontent-c9="">Commits</h3>
+
+				<p _ngcontent-c9="" concept-tooltip="">Tracked files can be in three states:</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• Modified: You changed the file.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• Staged: You changed the file and prepared it to be snapshotted (git add).</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">• Committed: You took a snapshot of the entire project and the file was in it (git commit).</p>
+
+
+
+				<h3 _ngcontent-c9="">Navigating between versions</h3>
+
+				<p _ngcontent-c9="" concept-tooltip="">Many times, you will want not only to know what has changed in your project, but you also want to see what state it was in, to see the snapshot you took. It’s easy with Git.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">When you want to bring the previous state of the project to the working directory, we have to check out the commit with “git checkout.” Since this changes the files on the working directory, you have to make sure not to have any unstaged files on there. Untracked files are fine since Git doesn’t track their states yet.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">To check a snapshot of the project, we use the “git checkout” command, and pass the commit name as a parameter.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Remember the commit names we talked about earlier? We are going to use them in this section to switch between versions.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">First you need to create a text file “hello.txt” , in the file write Hello world!, save and exit.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Open "git bash" inside the folder created earlier, use git status to check the status of the repository, git add to stage the changes and commit to commit the changes.</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/742213921250f281f000" alt="Figure 10: git commit">
+					<figcaption _ngcontent-c9="">Figure 10: git commit</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">Now we want to edit the file and change the “hello world” to “Hello (add your name)” e.g Hello Zalihat.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">After doing that, run “git add” to stage and “git commit”&nbsp; to commit the changes.</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/7b25139212782201f000" alt="Figure 11: commit message">
+					<figcaption _ngcontent-c9="">Figure 11: commit message</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">Nice, so now we want to switch to the time when the text was “hello world”.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">We use checkout, followed by the commit name; to get the commit name we use the git log.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Remember you can type “clear” to clear your screen.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">The question is, how do we know which commit to switch to? It's easy, just check the commit messages.&nbsp;</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Git checkout 4fb9ab877a5d96a18ec24c1dfa4bd72057fba386</p>
+
+
+
+
+
+				<figure _ngcontent-c9="">
+					<img _ngcontent-c9="" src="https://cdn.hamoye.com/6f1b1392129ae141f000" alt="Figure 12:&amp;nbsp; switching between commits">
+					<figcaption _ngcontent-c9="">Figure 12:&nbsp; switching between commits</figcaption>
+				</figure>
+
+				<p _ngcontent-c9="" concept-tooltip="">If you check your text editor, you will notice that the project is now just like it was when you took the snapshot. That is what’s best with Git. Nothing you took a snapshot of is ever lost!</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">Now let’s learn some Git terminology. First is “head.” “head” is just a reference to a commit. Instead of saying “name,” when talking about commits, we say “head.”</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">When switching between different commits, we need a way to know which “head”&nbsp; we are on. The current “head” (the one being checked out) is just called “HEAD.”, and that’s it! A "head" is a reference to a commit (there can be multiple "head"s in a</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">repository), and the “head “pointing to the currently checked-out commit is called “HEAD”.</p>
+
+
+
+				<p _ngcontent-c9="" concept-tooltip="">This is especially important when you make mistakes and want to return to the previous version.</p>
+
+
+
+			</block-document>
+		</div>
+
+		<div _ngcontent-c17="" class="modal-footer">
+			<button _ngcontent-c17="" class="btn-root _filled" type="button">Close</button>
+		</div>
+	</ng-component> 
+</div>
+</body>
+</html>
